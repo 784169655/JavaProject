@@ -1,0 +1,9 @@
+server:
+  port: 8081
+cupSize: D
+age: 20
+content: "cupSize:${cupSize},age:${age}"
+
+girl:
+  cupSize: D
+  age: 20

@@ -1,0 +1,18 @@
+spring:
+  profiles:
+#  开发环境
+    active: develop
+#  生产环境
+#    active: product
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306:dbgirl
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+server:
+  servlet:
+    context-path: /girl

@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456                                              #连接数据库是不是mysql的ssl连接时，忽略警告
+    url: jdbc:mysql://192.168.2.158/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+server:
+  servlet:
+    context-path: /sell
+#logging:
+#  pattern:
+##            日期 - 信息  换行
+#    console: "%d - %msg%n"
+#  path: /var/log/tomcat/
+#  path: /Users/xiaowei/Documents/GitHub/JavaProject/WXDC/log/
+#  path 和 file  file 多了个命名的功能
+#  file: /Users/xiaowei/Documents/GitHub/JavaProject/WXDC/log/sell.log
+#  指定日志级别
+#  level: debug
+#    也可以配成指定的类
+#  level:
+#    com.wxdc.LoggerTest: error

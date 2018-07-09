@@ -1,0 +1,18 @@
+
+eureka:
+  client:
+    service-url:
+#    因为注册是 key value 形式
+     defaultZone: http://localhost:8761/eureka
+#    让本服务不显示在 application
+    register-with-eureka: false
+  server:
+#    自我保护模式(开发时建议 false 生产 true)   某时间段的上线率低于某个比率时报红警告
+    enable-self-preservation: false
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
+  servlet:
+    context-path: /

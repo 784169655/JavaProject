@@ -1,0 +1,13 @@
+
+eureka:
+  client:
+    service-url:
+#    要注册上去的地址  +  应用
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+
+#  自定义链接的名字
+#  instance:
+#    hostname: clientName
+spring:
+  application:
+    name: SampleFeignClient

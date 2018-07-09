@@ -1,0 +1,118 @@
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbda984d292cfeb5d&redirect_uri=http://xiaowei.nat300.top/sell/weixin/auth&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+
+https://api.weixin.qq.com/sns/oauth2/access_token?appid= wxbda984d292cfeb5d&secret= d118b4aad0285d409abce36b43a0dced&code=CODE&grant_type=authorization_code
+
+{"access_token":"8_qLejm7hepqCEkFyOJ83-jytyIGQyyPR19kBrG4D12COnF2ziTlZyDx33ETSq5YC73ogh5rKlNfIVf3dvcApnsTAdtpkahjNPmRAbyTUDEZQ","expires_in":7200,"refresh_token":"8_eh-Xzas33B83QU4sGTTkOYJ95yAC6avdSCj80KSPlNWRtZdzIvaxQiccB3PLsnynnzeoMNPrVpOLYsNc4hm-nZHds4sRnLY5AsH_qQ1UytA","openid":"odUzS03upHGJj9LSjQvhOfbikdVg","scope":"snsapi_base"}
+
+
+Openid:oTgZpwV4SJaopu8O_TehAZ2KkuCc
+
+
+抓包工具  windows : fiddler
+        Mac : Charles
+
+前端代码路径: opt/code/sell_fe_buyer
+前端编绎后的代码拷贝路径: [root@localhost sell_fe_buyer]# \cp -r dist/* /opt/data/wwwroot/sell/ 
+nginx路径: 
+
+18651852898
+
+主机IP 变化 时 ，改  nginx.conf  和  手机wifi代理 
+
+<xml><appid><![CDATA[wxd898fcb01713c658]]></appid>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1483469312]]></mch_id>
+<nonce_str><![CDATA[KktN9orMsM31rrsk]]></nonce_str>
+<openid><![CDATA[oTgZpwV4SJaopu8O_TehAZ2KkuCc]]></openid>
+<out_trade_no><![CDATA[1523439802613688159]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[44ECACD312C1EBFB047E4EDD39710042]]></sign>
+<time_end><![CDATA[20180411174342]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4200000052201804116585258361]]></transaction_id>
+</xml>
+
+
+=====================================================
+		开 放 平 台
+https://open.weixin.qq.com/connect/qrconnect?appid=wxd898fcb01713c658&redirect_uri=http%3A%2F%2Fsell.springboot.cn%2Fsell%2Fqr%2F{OPENID}&response_type=code&scope=snsapi_login&state={http://xiaowei.nat300.top/qrUserInfo}
+
+
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbda984d292cfeb5d&redirect_uri=http://xiaowei.nat300.top/sell/weixin/auth&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd898fcb01713c658&redirect_uri=xiaowei.nat300.top%2Fsell%2Fwechat%2FuserInfo&response_type=code&scope=snsapi_base&state=http%3A%2F%2Fwww.imooc.com#wechat_redirect
+
+
+
+
+<xml><appid><![CDATA[wxd898fcb01713c658]]></appid>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1483469312]]></mch_id>
+<nonce_str><![CDATA[xBWLmGdMHlb8lW2O]]></nonce_str>
+<openid><![CDATA[oTgZpwV4SJaopu8O_TehAZ2KkuCc]]></openid>
+<out_trade_no><![CDATA[1524394920759567839]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BC93A39FB264FF24C308127D782F478F]]></sign>
+<time_end><![CDATA[20180422190215]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4200000072201804224091266572]]></transaction_id>
+</xml>
+
+
+Mac安装 redis客户端
+
+
+启动apache ab  jmit  loadRunner        老师机子个  1000个请求，100以下的并发 正常
+sudo apachectl start，这样就将Mac自带的Apache启动了
+ab -n 100 -c 100 http://www.baidu.com/  -n表示发出100个请求，-c表示模拟100个并发  相当于100个人同时访问
+ab -t 60 -c 100 http://www.baidu.com/  -t表示60秒，-c表示100个并发，连续60秒内不停的在发请求
+
+ab -n 100 -c 10 http://127.0.0.1:8080/sell/skill/order/123456  使用10个线程总共请求100个请求数访问
+
+ab -n 500 -c 100 http://127.0.0.1:8080/sell/skill/order/123456  使用100个线程总共请求500个请求数访问
+
+
+打包 mvn clean package
+打包路过单元测试 mvn clean package -Dmaven.test.skip=true
+
+换个打出来包的名字 在.pom文件build标签下加  , <finalName>sell</finalName> 
+
+改端口
+java -jar -Dserver.port=8090 sell.jar
+
+改profiles
+java -jar -Dserver.port=8090 -Dspring.profiles.active=prod sell.jar
+
+Linus下后台运行jar包
+nohup java -jar sell.jar > /dev/null 2>&1 &
+
+编写shell脚本
+Vim start.sh
+#!/bin/sh
+nohup java -jar sell.jar > /dev/null 2>&1 &
+
+Bash start.sh
+
+Centos 7 service
+
+
+
+brew services start mongodb
+nexus start
+mongo
+
+
+open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=/Users/xiaowei/Document/MyChromeDevUserData/
+promote:~ xiaowei$ 
+

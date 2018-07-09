@@ -1,0 +1,57 @@
+  spring:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456                                              #连接数据库是不是mysql的ssl连接时，忽略警告
+      url: jdbc:mysql://192.168.2.158/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  redis:
+    host: 192.168.2.158
+    port: 6379
+    password:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main
+  freemarker:
+    cache: false
+
+#  jackson:
+#    只要有对象或属性为 null 的都不返回
+#    default-property-inclusion: non_null
+#server:
+#  context-path: /sell
+
+#微信相关配置
+wechat:
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret: xxxxxxxxxx
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+#  证书的路径
+  keyPath: /Users/xiaowei/Documents/GitHub/JavaProject/WXDC/h5.p12
+#  异步通知
+  notifyUrl: http://xiaowei.nat300.top/pay/notify
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  templateId:
+    orderStatus:
+
+#微信公众测试平台
+wechatMpTest:
+  testMpAppId: wxbda984d292cfeb5d
+  testMpAppSecret: d118b4aad0285d409abce36b43a0dced
+  testTemplateId:
+    orderStatus: cqwieNKSar2QGzf0-TOOiCK_Xqgdau-LJpOqXq_C7vA
+
+#项目中url相关配置
+projectUrl:
+  wechatMpAuthorize: http://xiaowei.nat300.top/sell/wechat/userInfo
+  wechatOpenAuthorize: http://sell.springboot.cn/sell/wechat/qrUserInfo
+  sell: http://xiaowei.nat300.top/sell
+  wechatUserInfo: http://xiaowei.nat300.top/sell/wechat/userInfo
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
